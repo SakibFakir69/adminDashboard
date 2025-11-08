@@ -141,8 +141,10 @@ function SideBar({ onPageChange, currentPage, onToggle, collapsed }) {
               >
                 <div className="flex items-center space-x-3">
                   <Icon className="w-5 h-5" />
+                  
                   {!collapsed && (
                     <>
+
                       <span className="font-medium ml-2">{item.label}</span>
 
                       {item.badge && (
