@@ -75,20 +75,22 @@ function StatsGrid() {
                 </div>
 
             </div>
-            <div className={`p-3 rounded-xl group-hover:scale-125 duration-200`}>
+            <div className={`p-3 rounded-xl ${stats.bgColor} group-hover:scale-110 duration-300`}>
 
-                {}
-
-            </div>
-      {/* progress bar */}
-        <div className=' mt-4  bg-slate-100 dark:bg-slate-800 rounded-full  overflow-hidden'>
-
-            <div className={`w-full bg-linear-to-r rounded-full transition-all  duration-100`}>
+                <stats.icon className={`w-6 h-6 ${stats.textColor} `}/>
 
             </div>
 
+
         </div>
-        </div>
+          {/* progress bar */}
+        <div className="mt-4 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+  <div
+    className={`h-full bg-gradient-to-r ${stats.color} rounded-full transition-all duration-500`}
+    style={{ width: stats.trend === "up" ? "75%" : "45%" }}
+  ></div>
+</div>
+
       
 
      
@@ -97,6 +99,8 @@ function StatsGrid() {
         </div>
        
       })}
+      
+    
       
     </div>
   )

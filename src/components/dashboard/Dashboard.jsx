@@ -2,6 +2,7 @@
 
 import React from 'react'
 import StatsGrid from './StatsGrid'
+import ChartSection from './ChartSection'
 
 function Dashboard() {
   return (
@@ -9,6 +10,7 @@ function Dashboard() {
       {/* status grid */}
 
       <StatsGrid/>
+      <ChartSection/>
 
     </div>
   )
