@@ -4,7 +4,7 @@
 import { Bell, ChevronDown, Filter, Menu, Plus, Search, Settings, Sun } from 'lucide-react'
 import React from 'react'
 
-function Header() {
+function Header({onToggle,sidebarCollapsed}) {
   return (
     <div className='bg-white/80 backdrop-blur-xl  px-6 py-4'>
 
@@ -12,8 +12,10 @@ function Header() {
 
 
         <div className='flex items-center space-x-4 '>
-          <button className='p-2 rounded-lg text-slate-600 dark:text-slate-300'>
+
+          <button onClick={onToggle} className='p-2 rounded-lg text-slate-600 dark:text-slate-300'>
             <Menu className='w-5 h-5'/>
+
           </button>
 
           <div className='hidden md:block'>
