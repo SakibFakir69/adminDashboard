@@ -27,7 +27,7 @@ function RevenueChart() {
   ];
 
   return (
-    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 p-6 rounded-2xl">
+    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 md:p-6 rounded-2xl">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
