@@ -82,9 +82,6 @@ const menuItems = [
 
 function SideBar({ onPageChange, currentPage, onToggle, collapsed }) {
   const [openMenu, setOpenMenu] = useState(null);
-  const [expanedItems ,setExpanedItems ] = useState(new Set(['analytics']))
-  
-
 
   const toggleSubmenu = (id) => {
     setOpenMenu(openMenu === id ? null : id);
@@ -94,7 +91,7 @@ function SideBar({ onPageChange, currentPage, onToggle, collapsed }) {
     <div
       className={`${
         collapsed ? "w-20" : "w-72"
-      } transition-all duration-300 ease-in-out bg-white/80 backdrop-blur-xl border-r border-slate-200/50 dark:border-stone-700/50 flex flex-col relative z-10`}
+      } transition-all duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-r border-slate-200/50 dark:border-slate-700/50 flex flex-col relative z-10`}
     >
       {/* Header */}
       <div className="p-6 border-b border-slate-200/50 dark:border-slate-700/50">
@@ -141,10 +138,9 @@ function SideBar({ onPageChange, currentPage, onToggle, collapsed }) {
               >
                 <div className="flex items-center space-x-3">
                   <Icon className="w-5 h-5" />
-                  
+
                   {!collapsed && (
                     <>
-
                       <span className="font-medium ml-2">{item.label}</span>
 
                       {item.badge && (
@@ -165,7 +161,7 @@ function SideBar({ onPageChange, currentPage, onToggle, collapsed }) {
                 {!collapsed && item.submenu && (
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${
-                      isOpen ? "rotate-180" : ""
+                      isOpen ? "rotate-180 text-blue-500" : "text-slate-400 dark:text-slate-300"
                     }`}
                   />
                 )}
@@ -178,8 +174,10 @@ function SideBar({ onPageChange, currentPage, onToggle, collapsed }) {
                     <button
                       key={menu.id}
                       onClick={() => onPageChange(menu.id)}
-                      className={`block w-full text-left text-sm text-slate-600 dark:text-slate-300 px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all ${
-                        currentPage === menu.id ? "text-blue-600 font-semibold" : ""
+                      className={`block w-full text-left text-sm px-2 py-1 rounded-md transition-all ${
+                        currentPage === menu.id
+                          ? "text-blue-600 font-semibold"
+                          : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
                       }`}
                     >
                       {menu.label}

@@ -4,6 +4,7 @@ import React from 'react'
 import StatsGrid from './StatsGrid'
 import ChartSection from './ChartSection'
 import TabelSection from './TabelSection'
+import ActivityFeed from './ActivityFeed'
 function Dashboard() {
   return (
     <div className='space-y-6 '>
@@ -16,6 +17,11 @@ function Dashboard() {
 
         <div className='xl:col-span-2'>
             <TabelSection/>
+
+        </div>
+
+        <div>
+          <ActivityFeed/>
 
         </div>
 

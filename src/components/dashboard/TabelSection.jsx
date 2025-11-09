@@ -222,9 +222,9 @@ function TabelSection() {
         {/* dynamic data */}
         <div className="p-6 space-y-4">
 
-         {topProducts.map((product)=>{
+         {topProducts.map((product,key)=>{
 
-          return  <div className=" flex items-center justify-between p-4  rounded-xl hover:bg-slate-50 dark:bg-slate-800/50 transition-colors">
+          return  <div key={key} className=" flex items-center justify-between p-4  rounded-xl hover:bg-slate-50 dark:bg-slate-800/50 transition-colors">
 
           <div className="flex-1">
             <h4 className="text-sm  text-slate-800 dark:text-white font-semibold">
