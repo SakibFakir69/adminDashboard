@@ -80,7 +80,8 @@ const menuItems = [
   },
 ];
 
-function SideBar({ onPageChange, currentPage, onToggle, collapsed }) {
+function SideBar({ onPageChange, currentPage, collapsed }) {
+  
   const [openMenu, setOpenMenu] = useState(null);
 
   const toggleSubmenu = (id) => {
@@ -90,7 +91,7 @@ function SideBar({ onPageChange, currentPage, onToggle, collapsed }) {
   return (
     <div
       className={`${
-        collapsed ? "w-20" : "w-72"
+        collapsed ? "w-20" : "w-64"
       } transition-all duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-r border-slate-200/50 dark:border-slate-700/50 flex flex-col relative z-10`}
     >
       {/* Header */}

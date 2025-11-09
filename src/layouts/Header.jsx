@@ -1,13 +1,14 @@
 import { Bell, ChevronDown, Filter, Menu, Plus, Search, Settings, Sun, Moon } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 
-function Header({ onToggle, sidebarCollapsed }) {
+function Header({ onToggle }) {
+
   const [darkMode, setDarkMode] = useState(() => {
-    // check localStorage for saved mode
+    
     return localStorage.theme === 'dark';
   });
 
-  // Apply dark/light class to <html>
+
   useEffect(() => {
     const html = document.documentElement;
     if (darkMode) {
@@ -29,7 +30,7 @@ function Header({ onToggle, sidebarCollapsed }) {
           </button>
           <div className='hidden md:block'>
             <h1 className='text-2xl font-black text-slate-800 dark:text-white'>Dashboard</h1>
-            <p>Welcome back, Alex! Here's what's happening today</p>
+            <p className='dark:text-slate-400'>Welcome back, Alex! Here's what's happening today</p>
           </div>
         </div>
 
@@ -43,7 +44,7 @@ function Header({ onToggle, sidebarCollapsed }) {
               placeholder='Search Anything'
             />
             <button className='absolute right-2 top-1/2 transform -translate-y-1/2 p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300'>
-              <Filter/>
+              <Filter className='hidden '/>
             </button>
           </div>
         </div>
@@ -59,13 +60,13 @@ function Header({ onToggle, sidebarCollapsed }) {
           {/* Dark/Light Toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className='py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'
+            className='py-2.5 rounded-xl text-slate-600 dark:text-slate-300 transition-colors'
           >
             {darkMode ? <Sun className='w-5 h-5' /> : <Moon className='w-5 h-5' />}
           </button>
 
           {/* Notifications */}
-          <button className='relative p-2.5 rounded-xl text-slate-600 dark:text-slate-600 hover:bg-slate-100 dark:bg-slate-800 transition-colors'>
+          <button className='relative p-2.5 rounded-xl text-slate-600 dark:text-slate-600 '>
             <Bell className='w-5 h-5' />
             <span className='absolute -top-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center'>3</span>
           </button>
@@ -77,7 +78,7 @@ function Header({ onToggle, sidebarCollapsed }) {
 
           {/* Profile */}
           <div className='flex items-center space-x-3 pl-3 border-slate-200'>
-            <img src='' alt='user' className='w-8 h-8 rounded-full ring-2 ring-blue-600'/>
+            <img src='https://i.pravatar.cc/100?img=5' alt='user' className='w-8 h-8 rounded-full ring-2 ring-blue-600'/>
             <div className='hidden md:block'>
               <p className='text-sm font-medium text-slate-500 dark:text-slate-400'>Alex Jonson</p>
               <p className='text-xs text-slate-500 dark:text-slate-400'>Administrator</p>
